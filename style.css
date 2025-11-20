@@ -384,8 +384,9 @@ pre {
   }
   
   .image-container {
-    margin: 1rem 0;
+    margin: 1rem auto;
     padding: 1.5rem 1.5rem 1rem 1.5rem;
+    width: 95%;
   }
   
   .media-card {
@@ -399,6 +400,30 @@ pre {
   
   .results-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .results-left, .results-right {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .media-card {
+    width: 95%;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .section {
+    margin-top: 2rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-container.full-width {
+    width: 95%;
+    margin: 1rem auto;
   }
 }
 
@@ -422,8 +447,9 @@ pre {
   }
   
   .image-container {
-    margin: 0.75rem 0;
+    margin: 0.75rem auto;
     padding: 1.25rem 1rem 0.75rem 1rem;
+    width: 98%;
   }
   
   .media-card {
@@ -433,6 +459,25 @@ pre {
   .media-card .img {
     width: 100%;
     height: auto;
+  }
+  
+  .section {
+    margin-top: 1.5rem;
+  }
+  
+  .results-left, .results-right {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .media-card {
+    width: 98%;
+    margin: 0 auto 0.75rem auto;
+  }
+  
+  .image-container.full-width {
+    width: 98%;
+    margin: 0.75rem auto;
   }
 }
 
@@ -931,7 +976,7 @@ pre {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
   gap: 1.25rem;
   margin-top: 1rem;
 }
