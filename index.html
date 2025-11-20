@@ -23,9 +23,9 @@
     <div class="container">
       <nav class="main-nav">
         <ul class="nav-links">
-          <li><a href="#abstract">Abstract</a></li>
-          <li><a href="#overview">Overview</a></li>
+          <li><a href="#abstract">Pillar-0 Overview</a></li>
           <li><a href="#innovation">Core Innovation</a></li>
+          <li><a href="#evaluation">Evaluation</a></li>
           <li><a href="#results">Results</a></li>
           <li><a href="#resources">Resources</a></li>
           <li><a href="#citation">Cite Me</a></li>
@@ -38,11 +38,12 @@
     <div class="container">
       <div class="title-row">
         <h1 class="title"><span class="gradient-text">Pillar-0</span>: A New Frontier for Radiology Foundation Models</h1>
-        <p class="hero-subtitle">Volumetric-first radiology foundation model paired with RATE, a clinically grounded evaluation framework for CT and MRI.</p>
+        <p class="hero-subtitle">A general-purpose radiology foundation model for volumetric medical imaging.</p>
+        <!-- <p class="hero-subtitle">Volumetric-first radiology foundation model paired with RATE, a clinically grounded evaluation framework for CT and MRI.</p> -->
       </div>
       <div class="link-labels base-row">
         <div class="base-col icon-col">
-          <a href="#coming-soon" class="link-block">
+          <a href="paper.pdf" class="link-block">
             <i class="fa fas fa-file-text main-icon" style="font-size: 60px"></i>
             <strong class="link-labels-text">Paper (PDF)</strong>
           </a>
@@ -50,7 +51,7 @@
         <div class="base-col icon-col">
           <a href="#abstract" class="link-block">
             <i class="fa fa-lightbulb-o main-icon" style="font-size: 60px"></i>
-            <strong class="link-labels-text">Abstract</strong>
+            <strong class="link-labels-text">Pillar-0 Overview</strong>
           </a>
         </div>
         <div class="base-col icon-col">
@@ -60,7 +61,7 @@
           </a>
         </div>
         <div class="base-col icon-col">
-          <a href="https://huggingface.co/collections/YalaLab/pillar-0" class="link-block" target="_blank" rel="noopener">
+          <a href="https://huggingface.co/collections/YalaLab/pillar0" class="link-block" target="_blank" rel="noopener">
             <i class="fa fa-database main-icon" style="font-size: 60px"></i>
             <strong class="link-labels-text">Models</strong>
           </a>
@@ -88,12 +89,12 @@
       </div>
       <div class="base-row author-row">
         <div class="base-col author-col affiliations">
-          UC Berkeley, UCSF, MIT, Mass General Brigham Cancer Institute, Massachusetts General Hospital, and collaborators.
+          UC Berkeley, UC San Francisco, Massachusetts Institute of Technology, Mass General Brigham Cancer Institute, Massachusetts General Hospital, and Chang Gung Memorial Hospital.
         </div>
       </div>
       <div class="base-row author-row">
-        <div class="base-col author-col affiliations">
-          * Project lead; † Core contributor (equal contribution; order among core contributors randomized); ‡ Co-senior author.
+        <div class="base-col author-col author-contributions">
+          *Project lead &nbsp;&nbsp; † Equal core contributor &nbsp;&nbsp; ‡ Co-senior author
         </div>
       </div>
     </div>
@@ -102,62 +103,63 @@
   <main class="main-content">
     <div class="container">
       <section id="abstract" class="section">
-        <h2>Abstract</h2>
-        <p>Pillar-0 is a radiology foundation model trained on 218k CT and MRI exams (155k for pretraining, 31k for internal evaluation) with 366 radiologist-curated findings. The model preserves native volumetric resolution via modality-aware tokenization, leverages a multi-scale Atlas backbone for 3D efficiency, and aligns images to large text encoders through asymmetric contrastive learning. Paired with the RATE evaluation framework, Pillar-0 delivers state-of-the-art AUROC on abdomen-pelvis CT, chest CT, head CT, and breast MRI, outperforming MedGemma, MedImageInsight, Lingshu, and Merlin while enabling data-efficient downstream finetuning.</p>
-      </section>
-
-      <section id="overview" class="section">
         <h2>Pillar-0 Overview</h2>
-        <div class="section-grid">
-          <div class="text-col">
-            <p>Volumetric-first foundation model trained on 155k CT/MR exams and evaluated on 31k more across 366 radiologist-curated findings. Keeps native resolution and radiologist viewing presets, winning 87.2% of RATE findings and leading AUROC on abdomen-pelvis CT, chest CT, head CT, and breast MRI.</p>
-            <p>RATE extracts labels from real reports; RATE-Evals freezes the encoder and trains one linear probe per finding to measure representation quality on full-resolution volumes.</p>
-            <div class="stat-grid">
-              <div class="stat-card">
-                <div class="stat-value">218k</div>
-                <div class="stat-label">CT/MR exams sourced from clinical workflows</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value">366</div>
-                <div class="stat-label">Radiologist-curated findings evaluated with RATE</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value">87.2%</div>
-                <div class="stat-label">Finding-level win rate vs. strongest baselines</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-value">4</div>
-                <div class="stat-label">Modalities: abdomen-pelvis CT, chest CT, head CT, breast MRI</div>
-              </div>
-            </div>
+        <p>We introduce Pillar-0, a radiology foundation model pretrained on 143k CTs and 11k MRIs from a large academic center, together with RATE, a scalable framework that extracts structured labels from radiology reports for 366 clinically grounded findings with near-perfect accuracy. </p>
+        <p>Pillar-0 establishes a new performance frontier across multiple benchmarks and tasks:</p>
+        <ul class="wins-list">
+          <li><strong>Internal RATE-Evals:</strong> Outperforms MedGemma, MedImageInsight, Lingshu, and Merlin by 7.8–15.8 AUC points, ranking best in 87.2% of tasks across all modalities.</li>
+          <li><strong>External validation:</strong> Outperforms all baselines on the Stanford abdomen-pelvis CT dataset, including Merlin (82.2 vs 80.6 AUC), which uses the Stanford dataset for development.</li>
+          <li><strong>Lung cancer risk prediction:</strong> Sets new state-of-the-art by improving upon Sybil by 3.0 C-index points on NLST, with strong generalization to MGH (+5.9) and CGMH (+1.9).</li>
+          <li><strong>Data efficiency:</strong> Achieves >95 AUC in brain hemorrhage detection using only 5% of the data required by the next most sample-efficient baseline—20–40× fewer labels.</li>
+        </ul>
+        <p>Pillar-0 and RATE together provide an open, clinically rigorous foundation for building high-performance radiology systems, enabling applications that were previously infeasible due to computational, data, and evaluation constraints.</p>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-value">218k</div>
+            <div class="stat-label">CT/MRI exams sourced from clinical workflows</div>
           </div>
-          <div class="image-container">
-            <div class="image-content">
-              <img src="images/pillar0/fig_1_teaser.png" class="img" alt="Pillar-0 overview figure" />
-            </div>
-            <p class="image-caption">Pillar-0 pairs a volumetric Atlas encoder with RATE-derived labels to set new radiology benchmarks.</p>
+          <div class="stat-card">
+            <div class="stat-value">366</div>
+            <div class="stat-label">Radiologist-curated findings evaluated with RATE</div>
           </div>
+          <div class="stat-card">
+            <div class="stat-value">87.2%</div>
+            <div class="stat-label">Finding-level win rate vs. strongest baselines</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Modalities: abdomen-pelvis CT, chest CT, head CT, breast MRI</div>
+          </div>
+        </div>
+        <div class="image-container full-width">
+          <div class="image-content">
+            <img src="images/pillar0/fig_1_teaser.png" class="img" alt="Pillar-0 overview figure" />
+          </div>
+          <p class="image-caption">Figure 1. Overview of Pillar-0 and key results across modalities and tasks. </p>
         </div>
       </section>
 
       <section id="innovation" class="section">
-        <h2>Core Innovation</h2>
-        <h3>Volumetric Encoder Design</h3>
-        <p>Modality-aware multi-window tokenization mirrors radiologist presets and preserves subtle contrast (+4.6 AUROC on abdomen-pelvis CT). The Atlas multi-scale backbone replaces quadratic attention with $O(N \log N)$ attention, running 175× faster than ViT-S on $384^3$ inputs while keeping native 3D reasoning. Asymmetric contrastive pretraining aligns Atlas with a frozen LLM text encoder, making pretraining loss a reliable signal for downstream clinical performance.</p>
+        <h2>Pillar-0 key innovations</h2>
+        <p><strong>(A)</strong> Modality-specific multi-windowing converts full-resolution CT and MRI volumes into multi-channel inputs that emulate radiologist workflow presets, preserving clinically relevant contrast (+4.6 AUROC point gain).</p>
+        <p><strong>(B)</strong> The Atlas vision backbone efficiently processes long-context volumes, 175x faster than ViT-S, achieving state-of-the-art performance with fewer parameters than other medical foundation models.</p>
+        <p><strong>(C)</strong> Asymmetric contrastive pretraining aligns Atlas volume embeddings with embeddings from a larger LLM text encoder for a much stronger correlation between loss and downstream performance.</p>
         <div class="image-container">
           <div class="image-content">
             <img src="images/pillar0/fig_2_ablations.png" class="img" alt="Pillar-0 ablations and innovations" />
           </div>
-          <p class="image-caption">Multi-window tokenization, Atlas multi-scale attention, and asymmetric contrastive pretraining drive Pillar-0 performance.</p>
+          <p class="image-caption">Figure 2. Pillar-0 key innovations across tokenization, architecture, and pretraining.</p>
         </div>
+      </section>
 
-        <h3>Clinically Grounded Evaluation</h3>
-        <p>RATE is the only benchmark using full-resolution volumes, clinically authored findings, and report-derived labels instead of synthetic or textbook snapshots. RATE-Evals trains one linear probe per task on frozen encoders, enabling fair comparisons across vision models and modalities.</p>
+      <section id="evaluation" class="section">
+        <h2>Clinically Grounded Evaluation</h2>
+        <p>We introduce RATE, a unified framework designed to evaluate any vision model on full-fidelity medical volumes, using authentic clinical tasks derived from real-world radiology practice. Board-certified radiologists curated 366 diverse radiologic findings reflecting real-world practice across our modalities. RATE then uses open large language models to extract binary labels for each task from radiology reports, enabling scalable and clinically grounded benchmarking. Building on this framework, we introduce RATE-Evals, a standardized protocol for assessing pretrained vision encoders on real-world medical imaging datasets using linear probing.</p>
         <div class="image-container">
           <div class="image-content">
             <img src="images/pillar0/fig_3_rate.png" class="img" alt="RATE evaluation framework" />
           </div>
-          <p class="image-caption">RATE transforms radiology reports into scalable, clinically grounded labels and standardizes linear-probe evaluation.</p>
+          <p class="image-caption">Figure 3. RATE: a clinically grounded evaluation framework for volumetric radiology.</p>
         </div>
       </section>
 
@@ -167,19 +169,29 @@
         <p><strong>External.</strong> Stanford Merlin abdomen-pelvis CT: 82.2 AUROC vs. Merlin 80.6. Stanford-only Pillar-0 also 82.2; Pillar-0 init + Stanford finetune reaches 84.9 (Table 1).</p>
         <p><strong>Lung cancer risk.</strong> Sybil-1.5 (Pillar-0 finetuned) lifts 1–6 year AUROC on NLST, MGH, and CGMH while localizing suspicious regions from a single LDCT.</p>
         <p><strong>Data efficiency.</strong> RSNA-2019 ICH: AUROC 95.0 with 2.5% data; Swin3D-t needs 50%, Merlin 75%, 3D ResNet 100%—20–40× fewer labels.</p>
-        <p><strong>Across modalities.</strong> Pillar-0 holds its lead on abdomen-pelvis CT, chest CT, head CT, and breast MRI, with AUROC gains from +7.8 to +15.8 versus MedGemma, MedImageInsight, Lingshu, and Merlin. The chart shows consistent wins across all 366 RATE findings (319 wins), underscoring strong generalization rather than one-modality spikes.</p>
-        <div class="image-container">
-          <div class="image-content">
-            <img src="images/pillar0/fig_4_internal.png" class="img" alt="Internal evaluation results" />
+        <div class="results-grid">
+          <div class="results-left">
+            <div class="media-card">
+              <div class="image-content">
+                <img src="images/pillar0/fig_4_internal.png" class="img" alt="Internal evaluation results" />
+              </div>
+              <p class="image-caption">Figure 4. Pillar-0 achieves dominant performance over MedGemma, MedImageInsight, Lingshu, and Merlin on internal UCSF test sets across all modalities.</p>
+            </div>
           </div>
-          <p class="image-caption">Pillar-0 beats MedGemma, MedImageInsight, Lingshu, and Merlin on internal UCSF RATE-Evals across all modalities.</p>
-        </div>
-        <p><strong>Long-horizon risk.</strong> Finetuning into Sybil-1.5 boosts 1–6 year lung cancer risk prediction on NLST and external cohorts (MGH, CGMH), while localizing suspicious regions from a single LDCT. Improvements hold across demographics, offering both calibration and interpretability for screening workflows.</p>
-        <div class="image-container">
-          <div class="image-content">
-            <img src="images/pillar0/fig_5_lung.png" class="img" alt="Lung cancer risk prediction results" />
+          <div class="results-right">
+            <div class="media-card">
+              <div class="image-content">
+                <img src="images/pillar0/fig_5_lung.png" class="img" alt="Lung cancer risk prediction results" />
+              </div>
+              <p class="image-caption">Figure 5. Finetuning Pillar-0 (Sybil-1.5) sets a new state-of-the-art for future lung cancer risk prediction</p>
+            </div>
+            <div class="media-card">
+              <div class="image-content">
+                <img src="images/pillar0/fig_6_brain.png" class="img" alt="Brain hemorrhage detection results" />
+              </div>
+              <p class="image-caption">Figure 6. Pillar-0 achieves >95 AUC in brain hemorrhage detection using only 5% of the data required by the next most sample-efficient baseline.</p>
+            </div>
           </div>
-          <p class="image-caption">Finetuning Pillar-0 (Sybil-1.5) sets a new state-of-the-art for long-horizon lung cancer risk prediction on NLST, MGH, and CGMH.</p>
         </div>
         <div class="table-container image-container">
           <div class="image-content">
@@ -230,7 +242,7 @@
               </tbody>
             </table>
           </div>
-          <p class="image-caption">Table 1. External validation on the Stanford Merlin Abdominal CT dataset shows Pillar-0 outperforming all baselines.</p>
+          <p class="image-caption">Table 1. External validation on the Stanford Merlin Abdominal CT dataset shows Pillar-0 outperforms all baselines.</p>
         </div>
       </section>
 
@@ -259,7 +271,7 @@
           </div>
           <div class="card">
             <h3>Model Checkpoints</h3>
-            <p><a href="https://huggingface.co/collections/YalaLab/pillar-0" target="_blank" rel="noopener">Hugging Face Collection</a></p>
+            <p><a href="https://huggingface.co/collections/YalaLab/pillar0" target="_blank" rel="noopener">Hugging Face Collection</a></p>
           </div>
         </div>
       </section>
