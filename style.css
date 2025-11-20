@@ -338,149 +338,6 @@ pre {
   flex: 1 1 0;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-  .container {
-    padding: 0 15px;
-  }
-  
-  .title {
-    font-size: 2rem;
-  }
-  
-  .section {
-    padding: 60px 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .base-col {
-    flex: 0 0 50%;
-    max-width: 50%;
-    margin-bottom: 1.5rem;
-  }
-  
-  .icon-col {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
-    margin-bottom: 1.5rem;
-  }
-  
-  .title {
-    font-size: 1.8rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.6rem;
-  }
-  
-  .img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .image-container {
-    margin: 1rem auto;
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
-    width: 95%;
-  }
-  
-  .media-card {
-    padding: 1.5rem 1.5rem 1rem 1.5rem;
-  }
-  
-  .media-card .img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .results-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  .results-left, .results-right {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .media-card {
-    width: 95%;
-    margin: 0 auto 1rem auto;
-  }
-  
-  .section {
-    margin-top: 2rem;
-  }
-  
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .image-container.full-width {
-    width: 95%;
-    margin: 1rem auto;
-  }
-}
-
-@media (max-width: 576px) {
-  .base-col, .icon-col {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  
-  .icon-col {
-    margin-bottom: 2rem;
-  }
-  
-  .title {
-    font-size: 1.6rem;
-  }
-  
-  .img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .image-container {
-    margin: 0.75rem auto;
-    padding: 1.25rem 1rem 0.75rem 1rem;
-    width: 98%;
-  }
-  
-  .media-card {
-    padding: 1.25rem 1rem 0.75rem 1rem;
-  }
-  
-  .media-card .img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .section {
-    margin-top: 1.5rem;
-  }
-  
-  .results-left, .results-right {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .media-card {
-    width: 98%;
-    margin: 0 auto 0.75rem auto;
-  }
-  
-  .image-container.full-width {
-    width: 98%;
-    margin: 0.75rem auto;
-  }
-}
-
 /* Animation classes */
 .fade-in {
   animation: fadeIn 1s ease-in-out;
@@ -1176,9 +1033,159 @@ pre {
   text-decoration: underline;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 992px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .results-left,
+  .results-right {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
   .section-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .base-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .icon-col {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+  }
+  
+  .img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-container {
+    margin: 1rem auto;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    width: 95%;
+  }
+  
+  .media-card {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    width: 95%;
+    margin: 0 auto 1rem auto;
+  }
+  
+  .media-card .img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .section {
+    margin-top: 2rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .image-container.full-width {
+    width: 95%;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .base-col,
+  .icon-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .icon-col {
+    margin-bottom: 2rem;
+  }
+  
+  .main-nav {
+    width: 100%;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    display: block;
+    text-align: center;
+    padding: 0.4rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .image-container {
+    margin: 0.75rem auto;
+    padding: 1.25rem 1rem 0.75rem 1rem;
+    width: 98%;
+  }
+  
+  .media-card {
+    padding: 1.25rem 1rem 0.75rem 1rem;
+    width: 98%;
+    margin: 0 auto 0.75rem auto;
+  }
+  
+  .media-card .img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .section {
+    margin-top: 1.5rem;
+  }
+  
+  .image-container.full-width {
+    width: 98%;
+    margin: 0.75rem auto;
   }
 }
 
