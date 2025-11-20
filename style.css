@@ -28,8 +28,14 @@ body {
   background-color: var(--background-color);
   overflow-x: hidden;
   font-size: 17px;
+  -webkit-tap-highlight-color: transparent;
 }
 
+.link-block,
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
 .container {
   width: 100%;
   max-width: 1200px;
@@ -119,6 +125,10 @@ p {
   margin-bottom: 0.5rem;
 }
 
+.link-labels + .base-row.author-row {
+  margin-top: 3.5rem;
+}
+
 .author-col {
   margin: 2px 10px;
   text-align: center;
@@ -132,6 +142,10 @@ p {
 .author-text {
   font-size: 1.25rem;
   color: var(--primary-color);
+.title-row + .author-row {
+  margin-top: 2.5rem;
+}
+
   text-decoration: none;
   transition: var(--transition);
   white-space: nowrap;
@@ -424,8 +438,12 @@ pre {
   color: var(--light-text);
   text-align: center;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
 }
 
 .author-contributions {
@@ -433,7 +451,7 @@ pre {
   color: var(--light-text);
   text-align: center;
   width: 100%;
-  margin-top: 5px;
+  margin-top: 30px;
   margin-bottom: 10px;
   font-style: italic;
 }
