@@ -91,6 +91,11 @@
           UC Berkeley, UCSF, MIT, Mass General Brigham Cancer Institute, Massachusetts General Hospital, and collaborators.
         </div>
       </div>
+      <div class="base-row author-row">
+        <div class="base-col author-col affiliations">
+          * Project lead; † Core contributor (equal contribution; order among core contributors randomized); ‡ Co-senior author.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -130,29 +135,29 @@
             <div class="image-content">
               <img src="images/pillar0/fig_1_teaser.png" class="img" alt="Pillar-0 overview figure" />
             </div>
-            <p class="image-caption">Figure 1. Pillar-0 pairs a volumetric Atlas encoder with RATE-derived labels to set new radiology benchmarks.</p>
+            <p class="image-caption">Pillar-0 pairs a volumetric Atlas encoder with RATE-derived labels to set new radiology benchmarks.</p>
           </div>
         </div>
       </section>
 
       <section id="innovation" class="section">
         <h2>Core Innovation</h2>
-        <h3>Volumetric Encoder Design (Figure 2)</h3>
+        <h3>Volumetric Encoder Design</h3>
         <p>Modality-aware multi-window tokenization mirrors radiologist presets and preserves subtle contrast (+4.6 AUROC on abdomen-pelvis CT). The Atlas multi-scale backbone replaces quadratic attention with $O(N \log N)$ attention, running 175× faster than ViT-S on $384^3$ inputs while keeping native 3D reasoning. Asymmetric contrastive pretraining aligns Atlas with a frozen LLM text encoder, making pretraining loss a reliable signal for downstream clinical performance.</p>
         <div class="image-container">
           <div class="image-content">
             <img src="images/pillar0/fig_2_ablations.png" class="img" alt="Pillar-0 ablations and innovations" />
           </div>
-          <p class="image-caption">Figure 2. Multi-window tokenization, Atlas multi-scale attention, and asymmetric contrastive pretraining drive Pillar-0 performance.</p>
+          <p class="image-caption">Multi-window tokenization, Atlas multi-scale attention, and asymmetric contrastive pretraining drive Pillar-0 performance.</p>
         </div>
 
-        <h3>Clinically Grounded Evaluation (Figure 3)</h3>
+        <h3>Clinically Grounded Evaluation</h3>
         <p>RATE is the only benchmark using full-resolution volumes, clinically authored findings, and report-derived labels instead of synthetic or textbook snapshots. RATE-Evals trains one linear probe per task on frozen encoders, enabling fair comparisons across vision models and modalities.</p>
         <div class="image-container">
           <div class="image-content">
             <img src="images/pillar0/fig_3_rate.png" class="img" alt="RATE evaluation framework" />
           </div>
-          <p class="image-caption">Figure 3. RATE transforms radiology reports into scalable, clinically grounded labels and standardizes linear-probe evaluation.</p>
+          <p class="image-caption">RATE transforms radiology reports into scalable, clinically grounded labels and standardizes linear-probe evaluation.</p>
         </div>
       </section>
 
@@ -162,19 +167,19 @@
         <p><strong>External.</strong> Stanford Merlin abdomen-pelvis CT: 82.2 AUROC vs. Merlin 80.6. Stanford-only Pillar-0 also 82.2; Pillar-0 init + Stanford finetune reaches 84.9 (Table 1).</p>
         <p><strong>Lung cancer risk.</strong> Sybil-1.5 (Pillar-0 finetuned) lifts 1–6 year AUROC on NLST, MGH, and CGMH while localizing suspicious regions from a single LDCT.</p>
         <p><strong>Data efficiency.</strong> RSNA-2019 ICH: AUROC 95.0 with 2.5% data; Swin3D-t needs 50%, Merlin 75%, 3D ResNet 100%—20–40× fewer labels.</p>
-        <div class="media-grid">
-          <div class="media-card">
-            <div class="image-content">
-              <img src="images/pillar0/fig_4_internal.png" class="img" alt="Internal evaluation results" />
-            </div>
-            <p class="image-caption">Figure 4. Pillar-0 beats MedGemma, MedImageInsight, Lingshu, and Merlin on internal UCSF RATE-Evals across all modalities.</p>
+        <p><strong>Across modalities.</strong> Pillar-0 holds its lead on abdomen-pelvis CT, chest CT, head CT, and breast MRI, with AUROC gains from +7.8 to +15.8 versus MedGemma, MedImageInsight, Lingshu, and Merlin. The chart shows consistent wins across all 366 RATE findings (319 wins), underscoring strong generalization rather than one-modality spikes.</p>
+        <div class="image-container">
+          <div class="image-content">
+            <img src="images/pillar0/fig_4_internal.png" class="img" alt="Internal evaluation results" />
           </div>
-          <div class="media-card">
-            <div class="image-content">
-              <img src="images/pillar0/fig_5_lung.png" class="img" alt="Lung cancer risk prediction results" />
-            </div>
-            <p class="image-caption">Figure 5. Finetuning Pillar-0 (Sybil-1.5) sets a new state-of-the-art for long-horizon lung cancer risk prediction on NLST, MGH, and CGMH.</p>
+          <p class="image-caption">Pillar-0 beats MedGemma, MedImageInsight, Lingshu, and Merlin on internal UCSF RATE-Evals across all modalities.</p>
+        </div>
+        <p><strong>Long-horizon risk.</strong> Finetuning into Sybil-1.5 boosts 1–6 year lung cancer risk prediction on NLST and external cohorts (MGH, CGMH), while localizing suspicious regions from a single LDCT. Improvements hold across demographics, offering both calibration and interpretability for screening workflows.</p>
+        <div class="image-container">
+          <div class="image-content">
+            <img src="images/pillar0/fig_5_lung.png" class="img" alt="Lung cancer risk prediction results" />
           </div>
+          <p class="image-caption">Finetuning Pillar-0 (Sybil-1.5) sets a new state-of-the-art for long-horizon lung cancer risk prediction on NLST, MGH, and CGMH.</p>
         </div>
         <div class="table-container image-container">
           <div class="image-content">
