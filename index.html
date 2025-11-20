@@ -135,20 +135,20 @@
           <div class="image-content">
             <img src="images/pillar0/fig_1_teaser.png" class="img" alt="Pillar-0 overview figure" />
           </div>
-          <p class="image-caption">Figure 1. Overview of Pillar-0 and key results across modalities and tasks. </p>
+          <p class="image-caption">Overview of Pillar-0 and key results across modalities and tasks. </p>
         </div>
       </section>
 
       <section class="section">
         <h2 id="innovation">Pillar-0 key innovations</h2>
-        <p><strong>(A)</strong> Modality-specific multi-windowing converts full-resolution CT and MRI volumes into multi-channel inputs that emulate radiologist workflow presets, preserving clinically relevant contrast (+4.6 AUROC point gain).</p>
+        <p><strong>(A)</strong> Modality-specific multi-windowing converts full-resolution CT and MRI volumes into multi-channel inputs that emulate radiologist workflow presets, preserving clinically relevant contrast (+4.6 AUROC point gain on abdomen-pelvis CT).</p>
         <p><strong>(B)</strong> The Atlas vision backbone efficiently processes long-context volumes, 175x faster than ViT-S, achieving state-of-the-art performance with fewer parameters than other medical foundation models.</p>
         <p><strong>(C)</strong> Asymmetric contrastive pretraining aligns Atlas volume embeddings with embeddings from a larger LLM text encoder for a much stronger correlation between loss and downstream performance.</p>
         <div class="image-container">
           <div class="image-content">
             <img src="images/pillar0/fig_2_ablations.png" class="img" alt="Pillar-0 ablations and innovations" />
           </div>
-          <p class="image-caption">Figure 2. Pillar-0 key innovations across tokenization, architecture, and pretraining.</p>
+          <p class="image-caption">Pillar-0 key innovations across tokenization, architecture, and pretraining.</p>
         </div>
       </section>
 
@@ -159,7 +159,7 @@
           <div class="image-content">
             <img src="images/pillar0/fig_3_rate.png" class="img" alt="RATE evaluation framework" />
           </div>
-          <p class="image-caption">Figure 3. RATE: a clinically grounded evaluation framework for volumetric radiology.</p>
+          <p class="image-caption">RATE: a clinically grounded evaluation framework for volumetric radiology.</p>
         </div>
       </section>
 
@@ -175,7 +175,7 @@
               <div class="image-content">
                 <img src="images/pillar0/fig_4_internal.png" class="img" alt="Internal evaluation results" />
               </div>
-              <p class="image-caption">Figure 4. Pillar-0 achieves dominant performance over MedGemma, MedImageInsight, Lingshu, and Merlin on internal UCSF test sets across all modalities.</p>
+              <p class="image-caption">Pillar-0 achieves dominant performance over MedGemma, MedImageInsight, Lingshu, and Merlin on internal UCSF test sets across all modalities.</p>
             </div>
           </div>
           <div class="results-right">
@@ -183,13 +183,13 @@
               <div class="image-content">
                 <img src="images/pillar0/fig_5_lung.png" class="img" alt="Lung cancer risk prediction results" />
               </div>
-              <p class="image-caption">Figure 5. Finetuning Pillar-0 (Sybil-1.5) sets a new state-of-the-art for future lung cancer risk prediction</p>
+              <p class="image-caption">Finetuning Pillar-0 (Sybil-1.5) sets a new state-of-the-art for future lung cancer risk prediction</p>
             </div>
             <div class="media-card">
               <div class="image-content">
                 <img src="images/pillar0/fig_6_brain.png" class="img" alt="Brain hemorrhage detection results" />
               </div>
-              <p class="image-caption">Figure 6. Pillar-0 achieves >95 AUC in brain hemorrhage detection using only 5% of the data required by the next most sample-efficient baseline.</p>
+              <p class="image-caption">Pillar-0 achieves >95 AUC in brain hemorrhage detection using only 5% of the data required by the next most sample-efficient baseline.</p>
             </div>
           </div>
         </div>
@@ -220,12 +220,12 @@
                   <td>72.1</td>
                 </tr>
                 <tr>
-                  <td>Merlin (Stanford)</td>
+                  <td>Merlin (Trained on Stanford Dataset)</td>
                   <td>Merlin-Abd-CT</td>
                   <td>80.6</td>
                 </tr>
                 <tr>
-                  <td><strong>Pillar-0 (Stanford Only)</strong></td>
+                  <td><strong>Pillar-0 (Trained on Stanford Dataset Only)</strong></td>
                   <td>Merlin-Abd-CT</td>
                   <td><strong>82.2</strong></td>
                 </tr>
@@ -235,14 +235,14 @@
                   <td><strong>82.2</strong></td>
                 </tr>
                 <tr>
-                  <td><strong>Pillar-0 (UCSF + Stanford)</strong></td>
+                  <td><strong>Pillar-0 (Trained on UCSF and Stanford Datasets)</strong></td>
                   <td>UCSF-Abd-CT + Merlin-Abd-CT</td>
                   <td><strong>84.9</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p class="image-caption">Table 1. External validation on the Stanford Merlin Abdominal CT dataset shows Pillar-0 outperforms all baselines.</p>
+          <p class="image-caption">External validation on the Stanford Merlin Abdominal CT dataset shows Pillar-0 outperforms all baselines.</p>
         </div>
       </section>
 
