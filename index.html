@@ -43,7 +43,7 @@
       </div>
       <div class="link-labels base-row">
         <div class="base-col icon-col">
-          <a href="paper.pdf" class="link-block">
+          <a href="pdf/pillar-0.pdf" class="link-block" download="pillar-0.pdf">
             <i class="fa fas fa-file-text main-icon" style="font-size: 60px"></i>
             <strong class="link-labels-text">Paper (PDF)</strong>
           </a>
@@ -61,7 +61,7 @@
           </a>
         </div>
         <div class="base-col icon-col">
-          <a href="https://huggingface.co/collections/YalaLab/pillar0" class="link-block" target="_blank" rel="noopener">
+          <a href="https://huggingface.co/collections/YalaLab/pillar-0" class="link-block" target="_blank" rel="noopener">
             <i class="fa fa-database main-icon" style="font-size: 60px"></i>
             <strong class="link-labels-text">Models</strong>
           </a>
@@ -102,8 +102,8 @@
 
   <main class="main-content">
     <div class="container">
-      <section id="abstract" class="section">
-        <h2>Pillar-0 Overview</h2>
+      <section class="section">
+        <h2 id="abstract">Pillar-0 Overview</h2>
         <p>We introduce Pillar-0, a radiology foundation model pretrained on 143k CTs and 11k MRIs from a large academic center, together with RATE, a scalable framework that extracts structured labels from radiology reports for 366 clinically grounded findings with near-perfect accuracy. </p>
         <p>Pillar-0 establishes a new performance frontier across multiple benchmarks and tasks:</p>
         <ul class="wins-list">
@@ -139,8 +139,8 @@
         </div>
       </section>
 
-      <section id="innovation" class="section">
-        <h2>Pillar-0 key innovations</h2>
+      <section class="section">
+        <h2 id="innovation">Pillar-0 key innovations</h2>
         <p><strong>(A)</strong> Modality-specific multi-windowing converts full-resolution CT and MRI volumes into multi-channel inputs that emulate radiologist workflow presets, preserving clinically relevant contrast (+4.6 AUROC point gain).</p>
         <p><strong>(B)</strong> The Atlas vision backbone efficiently processes long-context volumes, 175x faster than ViT-S, achieving state-of-the-art performance with fewer parameters than other medical foundation models.</p>
         <p><strong>(C)</strong> Asymmetric contrastive pretraining aligns Atlas volume embeddings with embeddings from a larger LLM text encoder for a much stronger correlation between loss and downstream performance.</p>
@@ -152,8 +152,8 @@
         </div>
       </section>
 
-      <section id="evaluation" class="section">
-        <h2>Clinically Grounded Evaluation</h2>
+      <section class="section">
+        <h2 id="evaluation">Clinically Grounded Evaluation</h2>
         <p>We introduce RATE, a unified framework designed to evaluate any vision model on full-fidelity medical volumes, using authentic clinical tasks derived from real-world radiology practice. Board-certified radiologists curated 366 diverse radiologic findings reflecting real-world practice across our modalities. RATE then uses open large language models to extract binary labels for each task from radiology reports, enabling scalable and clinically grounded benchmarking. Building on this framework, we introduce RATE-Evals, a standardized protocol for assessing pretrained vision encoders on real-world medical imaging datasets using linear probing.</p>
         <div class="image-container">
           <div class="image-content">
@@ -163,8 +163,8 @@
         </div>
       </section>
 
-      <section id="results" class="section">
-        <h2>Results</h2>
+      <section class="section">
+        <h2 id="results">Results</h2>
         <p><strong>Internal RATE-Evals.</strong> AUROC: 86.4 (abdomen-pelvis), 88.0 (chest), 90.1 (head), 82.9 (breast); +7.8–15.8 vs. strongest baseline. Wins 319/366 findings (87.2%), ≥84.3% per modality.</p>
         <p><strong>External.</strong> Stanford Merlin abdomen-pelvis CT: 82.2 AUROC vs. Merlin 80.6. Stanford-only Pillar-0 also 82.2; Pillar-0 init + Stanford finetune reaches 84.9 (Table 1).</p>
         <p><strong>Lung cancer risk.</strong> Sybil-1.5 (Pillar-0 finetuned) lifts 1–6 year AUROC on NLST, MGH, and CGMH while localizing suspicious regions from a single LDCT.</p>
@@ -246,8 +246,8 @@
         </div>
       </section>
 
-      <section id="resources" class="section">
-        <h2>Resources</h2>
+      <section class="section">
+        <h2 id="resources">Resources</h2>
         <div class="card-grid">
           <div class="card">
             <h3>Vision-Language Pretraining</h3>
@@ -276,8 +276,8 @@
         </div>
       </section>
 
-      <section id="citation" class="section">
-        <h2>Cite Me</h2>
+      <section class="section">
+        <h2 id="citation">Cite Me</h2>
         <p>Please cite Pillar-0 if you find this work helpful.</p>
         <pre class="code-block"><code>@article{pillar0,
   title   = {Pillar-0: A New Frontier for Radiology Foundation Models},

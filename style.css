@@ -60,6 +60,7 @@ h2 {
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
+  scroll-margin-top: 80px;
 }
 
 h2:after {
