@@ -1137,23 +1137,64 @@ pre {
   
   .main-nav {
     width: 100%;
+    position: relative;
+    padding: 0 10px;
   }
   
   .nav-links {
-    flex-direction: column;
-    width: 100%;
-    align-items: stretch;
-    gap: 0.5rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.65rem;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-snap-type: x proximity;
+  }
+  
+  .nav-links::-webkit-scrollbar {
+    display: none;
   }
   
   .nav-links li {
     margin: 0;
+    flex: 0 0 auto;
   }
   
   .nav-links a {
-    display: block;
-    text-align: center;
-    padding: 0.4rem 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(14, 165, 233, 0.08);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    font-size: 0.95rem;
+    scroll-snap-align: start;
+  }
+  
+  .nav-links a:after {
+    display: none;
+  }
+  
+  .main-nav::before,
+  .main-nav::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 18px;
+    pointer-events: none;
+  }
+  
+  .main-nav::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
+  }
+  
+  .main-nav::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0));
   }
 }
 
