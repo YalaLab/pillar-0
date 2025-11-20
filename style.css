@@ -207,7 +207,7 @@ h3 {
 
 .image-container {
   margin: 1.5rem auto;
-  padding: 0.75rem 0 0.25rem 0;
+  padding: 1.5rem 2rem 1rem 2rem;
   position: relative;
   border-radius: 16px;
   box-shadow: var(--shadow);
@@ -216,7 +216,7 @@ h3 {
   overflow: visible;
   transform: translateY(0);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: fit-content;
+  width: 80%;
   max-width: 100%;
   display: block;
 }
@@ -241,9 +241,7 @@ h3 {
 
 .img, 
 .slideshow-video {
-  max-width: 98%;
-  max-height: 80vh;
-  width: auto;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   transition: var(--transition);
@@ -259,13 +257,14 @@ h3 {
 
 .image-container.full-width {
   display: block;
+  width: 80%;
   max-width: 100%;
   text-align: center;
 }
 
 .image-container.full-width .img {
-  max-width: 98%;
-  max-height: 80vh;
+  width: 100%;
+  height: auto;
 }
 
 .z-depth-1 {
@@ -380,22 +379,22 @@ pre {
   }
   
   .img {
-    max-width: 96%;
-    max-height: 80vh;
+    width: 100%;
+    height: auto;
   }
   
   .image-container {
     margin: 1rem 0;
-    padding: 0.75rem 0 0.25rem 0;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
   }
   
   .media-card {
-    padding: 0.75rem 0 0.25rem 0;
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
   }
   
   .media-card .img {
-    max-width: 96%;
-    max-height: 80vh;
+    width: 100%;
+    height: auto;
   }
   
   .results-grid {
@@ -418,22 +417,22 @@ pre {
   }
   
   .img {
-    max-width: 94%;
-    max-height: 75vh;
+    width: 100%;
+    height: auto;
   }
   
   .image-container {
     margin: 0.75rem 0;
-    padding: 0.75rem 0 0.25rem 0;
+    padding: 1.25rem 1rem 0.75rem 1rem;
   }
   
   .media-card {
-    padding: 0.75rem 0 0.25rem 0;
+    padding: 1.25rem 1rem 0.75rem 1rem;
   }
   
   .media-card .img {
-    max-width: 94%;
-    max-height: 75vh;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -1044,15 +1043,16 @@ pre {
 .media-card {
   background: white;
   border-radius: 16px;
-  padding: 0.75rem 0 0.25rem 0;
+  padding: 1.5rem 2rem 1rem 2rem;
   box-shadow: var(--shadow);
   border: 1px solid var(--border-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
 .media-card .img {
-  max-width: 98%;
-  max-height: 80vh;
+  width: 100%;
+  height: auto;
 }
 
 .media-card:hover {
